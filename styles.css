@@ -32,7 +32,7 @@ header.scrolled {
 }
 .logo {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 48px;
+    font-size: 55px;
     font-weight: 300;
     transition: all 0.3s ease;
 }
@@ -65,12 +65,12 @@ nav a:hover {
     background-image: url('rez0corp.jpg');
     background-size: cover;
     background-position: center;
-    height: 60vh;
+    height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    /* text-shadow: 2px 2px 4px rgba(0,0,0,0.5); */
     position: relative;
 }
 .hero::before {
@@ -80,7 +80,7 @@ nav a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.7);
+    background: rgba(54,96,163,0.7)
 }
 .hero-content {
     position: relative;
