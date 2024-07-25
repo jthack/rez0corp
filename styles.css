@@ -23,7 +23,7 @@ header {
     transition: all 0.3s ease;
 }
 header.scrolled {
-    padding: 10px 0;
+    padding: 5px 0;
 }
 .container {
     max-width: 1200px;
@@ -101,7 +101,8 @@ nav a:hover {
     margin-bottom: 20px;
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 300;
-    font-size: 3.5rem;
+    max-width: 1200px;
+    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 .content {
@@ -189,7 +190,7 @@ footer {
         margin: 10px 0;
     }
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
     }
     .hero-description {
         font-size: 0.9rem;
