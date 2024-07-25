@@ -4,9 +4,7 @@ function showTab(tabName) {
     const targetTab = document.getElementById(tabName);
     if (targetTab) {
         targetTab.classList.add('active');
-        targetTab.scrollIntoView({
-            behavior: 'smooth'
-        });
+
     }
 }
 
