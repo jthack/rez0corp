@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rez0 Corp - Cybersecurity and AI Services</title>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono+Thin:wght@100;400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3c78d8;
+            --text-color: #333;
+            --background-color: #f5f5f5;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'IBM Plex Mono', monospace;
+            line-height: 1.6;
+            font-weight: 300;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            scroll-behavior: smooth;
+        }
+        header {
+            background: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        header.scrolled {
+            padding: 10px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .logo {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 48px;
+            font-weight: 300;
+            transition: all 0.3s ease;
+        }
+        .logo:hover {
+            color: var(--primary-color);
+        }
+        .logo:hover span {
+            color: var(--text-color);  /* This will swap the '0' color on hover */
+        }
+        .logo span {
+            color: #3c78d8;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: var(--primary-color);
+        }
+        .hero {
+            background-image: url('rez0corp.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        .hero-description {
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 300;
+            font-size: 1.2rem;  /* Adjust this value to get the size you want */
+            max-width: 800px;  /* Adjust this to control the line length */
+            margin: 0 auto;
+            line-height: 1.6;
+            color: #f0f0f0;  /* Light color for contrast against dark background */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);  /* Subtle shadow for readability */
+        }
+
+        /* Responsive adjustment for smaller screens */
+        @media (max-width: 768px) {
+            .hero-description {
+                font-size: 0.9rem;
+                max-width: 90%;
+            }
+        }
+        .hero h1 {
+            margin-bottom: 20px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 300;  /* Use the thinnest available weight */
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        .content {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: var(--background-color);
+        }
+        h2 {
+            color: var(--primary-color);
+        }
+        h3 {
+            color: var(--text-color);
+        }
+        .tab {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        .tab.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        footer {
+            background: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 24px;
+            }
+            nav {
+                flex-direction: column;
+            }
+            nav a {
+                margin: 10px 0;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+<!-- let's make it also be a link to / -->
+                <div class="logo">
+                    <a href="/" style="font-weight: 300;">rez<span>0</span>corp</a>
+                </div>
+                <div>
+                    <a href="#services" onclick="showTab('services')">Services</a>
+                    <a href="#about" onclick="showTab('about')">About</a>
+                    <a href="#contact" onclick="showTab('contact')">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Cybersecurity and AI Services</h1>
+            <p class="hero-description">At rez0 corp, we have deep cybersecurity knowledge as well as expertise in AI. Our services range from full-scale web application testing to the development of bespoke AI products, ensuring your business stays secure and competitive.</p>
+
+        </div>
+    </div>
+
+    <div class="content">
+        <div id="services" class="tab active">
+            <!-- <h2>Services</h2> -->
+            <h3>Cybersecurity Services</h3>
+            <ol>
+                <li>
+                    <strong>Full Web Application Assessment</strong><br>
+                    A comprehensive evaluation of your entire web application, uncovering vulnerabilities before attackers do. Includes a detailed report of findings.
+                </li>
+                <li>
+                    <strong>Targeted Security Testing</strong><br>
+                    Focused testing on specific features, APIs, or areas of concern in your application. Ideal for quick security checks or follow-ups.
+                </li>
+                <li>
+                    <strong>AI Security Testing</strong><br>
+                    Rigorous testing of AI systems to identify potential vulnerabilities, biases, or exploits. Ensures your AI implementations are robust and trustworthy.
+                </li>
+            </ol>
+            <h3>AI Services</h3>
+            <ol>
+                <li>
+                    <strong>AI Integration Consulting</strong><br>
+                    Looking to leverage AI in your business? I analyze your processes and recommend practical AI solutions that can boost efficiency and drive growth.
+                </li>
+                <li>
+                    <strong>Custom AI Product Development</strong><br>
+                    Need a tailored AI solution? I design and build AI products specifically for your business needs, from concept to deployment.
+                </li>
+                <li>
+                    <strong>AI Security Consulting</strong><br>
+                    As AI becomes more prevalent, so do the associated risks. I help you understand and navigate the unique security challenges posed by AI systems.
+                </li>
+            </ol>
+        </div>
+
+        <div id="about" class="tab">
+            <h2>About Rez0 Corp</h2>
+            <p>Rez0 Corp, founded in Lexington, KY, specializes in cybersecurity and AI services. We're committed to securing digital assets and leveraging AI to enhance business operations, combining cutting-edge technology with years of industry experience.</p>
+            
+            <h3>About the Founder</h3>
+            <p>I'm Joseph Thacker, also known as rez0, a Principal AI Engineer at AppOmni and a security researcher specializing in application security and AI. I've helped Fortune 500 companies find vulnerabilities that could have cost them millions, and I've submitted over 1,000 vulnerabilities across Hackerone and Bugcrowd. I love helping secure the planet by building and breaking systems.</p>
+            <p>On a more personal level, I'm a Christian, husband, father, and hacker. I love most things in life, but I'm particularly fond of hacking, AI-art, running, podcasts, and keylime pie.</p>
+        </div>
+
+        <div id="contact" class="tab">
+            <h2>Contact Us</h2>
+            <p>Ready to enhance your cybersecurity or leverage AI for your business? Let's talk!</p>
+            <p>For inquiries, please email: <a href="mailto:contact@rez0corp.com">contact@rez0corp.com</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Rez0 Corp. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
