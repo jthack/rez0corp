@@ -100,9 +100,9 @@ nav a:hover {
 .hero h1 {
     margin-bottom: 20px;
     font-family: 'IBM Plex Mono', monospace;
-    font-weight: 300;
+    font-weight: 500;
     max-width: 1200px;
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     margin-bottom: 20px;
 }
 .content {
@@ -181,7 +181,7 @@ footer {
 }
 @media (max-width: 768px) {
     .logo {
-        font-size: 24px;
+        font-size: 34px;
     }
     nav {
         flex-direction: column;
@@ -191,9 +191,13 @@ footer {
     }
     .hero h1 {
         font-size: 1.5rem;
+        max-width: 90%;
     }
     .hero-description {
         font-size: 0.9rem;
+        max-width: 90%;
+    }
+    .content {
         max-width: 90%;
     }
 }
