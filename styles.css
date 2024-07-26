@@ -187,7 +187,7 @@ footer {
         flex-direction: column;
     }
     nav a {
-        margin: 10px 0;
+        margin: 10px 10;
     }
     .hero h1 {
         font-size: 1.5rem;
