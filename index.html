@@ -25,8 +25,8 @@
 
     <div class="hero">
         <div class="hero-content">
-            <h1>We help your business level up.</h1>
-            <p class="hero-description">At rez0corp we can improve your security through offensive testing and increase efficiency via AI implementation and services.</p>
+            <h1 id="hero-title">We help your business level up.</h1>
+            <p id="hero-description" class="hero-description">At rez0corp we can improve your security through offensive testing and increase efficiency via AI implementation and services.</p>
             <ul class="socials">
                 <li class="socials__item">
                     <a href="https://twitter.com/rez0__" target="_blank" class="socials__item__link" title="Twitter">
@@ -75,23 +75,20 @@
             <ol>
                 <li>
                     <strong>AI Integration Consulting</strong><br>
-                    Looking to leverage AI in your business? I analyze your processes and recommend practical AI solutions that can boost efficiency and drive growth.
+                    Looking to leverage AI in your business? We analyze your processes and recommend practical AI solutions that can boost efficiency and drive growth.
                 </li>
                 <li>
                     <strong>Custom AI Product Development</strong><br>
-                    Need a tailored AI solution? I design and build AI products specifically for your business needs, from concept to deployment.
+                    Need a tailored AI solution? We design and build AI products specifically for your business needs, from concept to deployment.
                 </li>
                 <li>
                     <strong>AI Security Consulting</strong><br>
-                    As AI becomes more prevalent, so do the associated risks. I help you understand and navigate the unique security challenges posed by AI systems.
+                    As AI becomes more prevalent, so do the associated risks. We help you understand and navigate the unique security challenges posed by AI systems.
                 </li>
             </ol>
         </div>
 
         <div id="about" class="tab">
-            <h3>about rez0corp</h3>
-            <p><b>Rez0corp</b>, founded in Lexington, KY, specializes in cybersecurity and AI services. We're committed to securing digital assets and leveraging AI to enhance business operations, combining cutting-edge technology with years of industry experience.</p>
-            
             <h3>about the founder</h3>
             <img src="headshotbw.jpg" alt="Headshot" style="max-width: 200px;" />
             <p>Hey! I'm <b>Joseph Thacker</b>, but I'm also known as <b>rez0</b> in the hacking scene. I'm a Principal AI Engineer at AppOmni and a security researcher specializing in application security and AI. I've helped Fortune 500 companies find vulnerabilities that could have cost them millions, and I've submitted over 1,000 vulnerabilities across Hackerone and Bugcrowd. I love helping secure the planet by building and breaking systems.</p>
@@ -101,7 +98,8 @@
         <div id="contact" class="tab">
             <h3>Contact Us</h3>
             <p>Ready to enhance your cybersecurity or leverage AI for your business? Let's talk!</p>
-            <p>For inquiries, please email: <a href="mailto:joseph@rez0security.com">joseph@rez0security.com</a></p>
+            <p>For inquiries, please email: <a href="mailto:contact@rez0corp.com">contact@rez0corp.com</a></p>
+            <p>You can also message Joseph on X: <a href="https://twitter.com/rez0__" target="_blank">@rez0__</a> or LinkedIn: <a href="https://www.linkedin.com/in/josephthacker/" target="_blank">Joseph Thacker</a></p>
         </div>
     </div>
 
@@ -122,6 +120,31 @@
             handleUrlChange();
           }
         })();
-      </script>
+
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            // Show the selected tab
+            document.getElementById(tabName).classList.add('active');
+
+            // Update hero content based on the selected tab
+            const heroTitle = document.getElementById('hero-title');
+            const heroDescription = document.getElementById('hero-description');
+
+            if (tabName === 'about') {
+                heroTitle.textContent = 'About rez0corp';
+                heroDescription.textContent = 'Rez0corp, founded in Lexington, KY, specializes in cybersecurity and AI services. We\'re committed to securing digital assets and leveraging AI to enhance business operations, combining cutting-edge technology with years of industry experience.';
+            } else if (tabName === 'contact') {
+                heroTitle.textContent = 'Ready to level up?';
+                heroDescription.textContent = 'Hit us up at one of the options below with any questions or to hear more about the services we offer.';
+            } else {
+                heroTitle.textContent = 'We help your business level up.';
+                heroDescription.textContent = 'At rez0corp we can improve your security through offensive cybersecurity services and increase efficiency via AI implementation and consulting.';
+            }
+        }
+
+        // Call showTab on page load to set the initial state
+        window.addEventListener('load', () => showTab('services'));
+    </script>
 </body>
 </html>
