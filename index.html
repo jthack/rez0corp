@@ -124,18 +124,12 @@
         <div id="contact" class="tab">
             <h3>Contact Us</h3>
             <p>Ready to enhance your cybersecurity or leverage AI for your business? Let's talk!</p>
-            <form id="contactForm" action="https://formsubmit.co/15fe3c8929307aeb12542e712cc460eb" method="POST">
+            <form action="https://formsubmit.co/15fe3c8929307aeb12542e712cc460eb" method="POST">
               <div style="display: flex; flex-direction: column; gap: 10px; max-width: 300px;">
                 <input type="email" name="email" placeholder="Your Email Address" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
-                <button type="submit" id="submitButton" style="padding: 10px; background-color: #3c78d8; color: white; border: none; border-radius: 4px; cursor: pointer;">
-                  <span class="button-text">I'm interested!</span>
-                  <span class="spinner"></span>
-                </button>
+                <button type="submit" style="padding: 10px; background-color: #3c78d8; color: white; border: none; border-radius: 4px; cursor: pointer;">I'm interested!</button>
               </div>
             </form>
-            <div id="successMessage" style="display: none; margin-top: 20px; color: #4CAF50;">
-              Thanks for your interest! We'll be in touch soon.
-            </div>
             <p>You can also message Joseph on X: <a href="https://twitter.com/rez0__" target="_blank">@rez0__</a> or LinkedIn: <a href="https://www.linkedin.com/in/josephthacker/" target="_blank">Joseph Thacker</a></p>
         </div>
     </div>
@@ -182,26 +176,6 @@
 
         // Call showTab on page load to set the initial state
         window.addEventListener('load', () => showTab('services'));
-
-        // Handle form submission
-        const contactForm = document.getElementById('contactForm');
-        const submitButton = document.getElementById('submitButton');
-        const successMessage = document.getElementById('successMessage');
-
-        contactForm.addEventListener('submit', (event) => {
-          event.preventDefault();
-          submitButton.disabled = true;
-          submitButton.querySelector('.button-text').style.display = 'none';
-          submitButton.querySelector('.spinner').style.display = 'block';
-
-          // Simulate form submission delay
-          setTimeout(() => {
-            submitButton.disabled = false;
-            submitButton.querySelector('.button-text').style.display = 'block';
-            submitButton.querySelector('.spinner').style.display = 'none';
-            successMessage.style.display = 'block';
-          }, 2000);
-        });
     </script>
 </body>
 </html>
