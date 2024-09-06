@@ -47,4 +47,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Handle browser back/forward navigation
     window.addEventListener('popstate', handleUrlChange);
+
+    // Handle form submission
+    const contactForm = document.getElementById('contactForm');
+    const submitButton = document.getElementById('submitButton');
+    const successMessage = document.getElementById('successMessage');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Show spinner
+            submitButton.classList.add('loading');
+
+            // Simulate form submission (replace this with actual form submission logic)
+            setTimeout(function() {
+                // Hide spinner
+                submitButton.classList.remove('loading');
+
+                // Show success message
+                successMessage.style.display = 'block';
+
+                // Reset form
+                contactForm.reset();
+
+                // Hide success message after 5 seconds
+                setTimeout(function() {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }, 2000); // Simulating a 2-second submission process
+        });
+    }
 });

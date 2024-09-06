@@ -225,6 +225,41 @@ footer {
     }
 }
 
+/* Spinner styles */
+.spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    border-top: 2px solid #3c78d8;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Button styles for loading state */
+#submitButton.loading .button-text {
+    display: none;
+}
+
+#submitButton.loading .spinner {
+    display: block;
+}
+
+/* Success message styles */
+#successMessage {
+    display: none;
+    margin-top: 20px;
+    color: #4CAF50;
+    font-weight: bold;
+    text-align: center;
+}
+
 #contact form {
     display: flex;
     justify-content: center;
